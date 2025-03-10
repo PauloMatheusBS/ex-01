@@ -4,38 +4,75 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      title: 'Perfil do Usuário',
       theme: ThemeData(
-        // useMaterial3: false,
         primarySwatch: Colors.blue,
       ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ProfileScreen(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+class ProfileScreen extends StatelessWidget {
+  final String userName = 'Paulo Matheus';
+  final int userAge = 30;
+  final String userCity = 'Campo Grande';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
+        backgroundColor: Colors.blue, // Cor de fundo da barra
+        title: Text(
+          'Perfil do Usuário',
+          style: TextStyle(
+            fontWeight: FontWeight.bold, // Título em negrito
+            color: Colors.white, // Cor do texto
+          ),
+        ),
       ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      body: Container(
+        color: Colors.black,
+        width: double.infinity, // Cor de fundo da tela
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Nome do usuário - texto grande e em negrito com cor azul
+            Text(
+              userName,
+              style: TextStyle(
+                fontSize: 32, // Tamanho grande
+                fontWeight: FontWeight.bold, // Negrito
+                color: Colors.blue, // Cor azul
+              ),
+            ),
+            SizedBox(height: 20), // Espaçamento entre os textos
+
+            // Idade do usuário - texto menor e em itálico com cor vermelha
+            Text(
+              'Idade: $userAge',
+              style: TextStyle(
+                fontSize: 18, // Tamanho menor
+                fontStyle: FontStyle.italic, // Itálico
+                color: Colors.red, // Cor vermelha
+              ),
+            ),
+            SizedBox(height: 20), // Espaçamento entre os textos
+
+            // Cidade do usuário - texto normal com cor roxa
+            Text(
+              'Cidade: $userCity',
+              style: TextStyle(
+                fontSize: 20, // Tamanho normal
+                color: Colors.purple, // Cor roxa
+              ),
+            ),
+          ],
         ),
       ),
     );
