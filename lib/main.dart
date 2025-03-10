@@ -22,6 +22,10 @@ class ProfileScreen extends StatelessWidget {
   final int userAge = 30;
   final String userCity = 'Campo Grande';
 
+  final String userName2 = 'Paulo Matheus';
+  final int userAge2 = 30;
+  final String userCity2 = 'Campo Grande';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
